@@ -1,0 +1,152 @@
+        h1 {
+            color: red;
+            font-size: 40;
+        }
+        
+        body {
+            /* background-image: url("../images/banner1.jpg");
+        background-size: cover;*/
+        }
+        
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        .logo {
+            width: 75px;
+            height: 70px;
+        }
+        
+        .myimage img {
+            width: 900px;
+            height: 500px;
+            margin: 2px;
+        }
+        
+        marquee {
+            border: 1 px;
+            padding: 8px;
+            margin: 8px;
+            color: crimson;
+            font-weight: bolder;
+            font-size: larger;
+        }
+        
+        .mylink {
+            text-decoration: none;
+        }
+        
+        span a:hover {
+            padding: 10px;
+            width: 50px;
+            background-color: darkturquoise;
+            font-weight: bolder;
+        }
+        
+        .myhead {
+            text-align: center;
+            font-weight: bolder;
+            font-size: xx-large;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .mycard {
+            padding: 10px;
+            font-size: large;
+        }
+        
+        .mysocial {
+            padding: 10px;
+            text-align: center;
+            font-size: xx-large;
+        }
+        
+        .myfooter {
+            font-weight: bolder;
+            font-size: large;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        footer {
+            width: 100%;
+            margin-bottom: 1%;
+        }
+        
+        .myflinks {
+            padding: 30px;
+            background-color: grey;
+        }
+        
+        .myflinks a:link {
+            color: black;
+        }
+        
+        .myflinks a:hover {
+            color: red;
+        }
+        /* selected link */
+        
+        .myflinks a:active {
+            color: black;
+            font-weight: bold;
+        }
+        
+        blockquote p {
+            font-size: medium;
+        }
+        
+        .mycaro {
+            width: 800px;
+            height: 450px;
+            margin: 10px;
+        }
+        
+        .mylogin {
+            padding: 20px;
+        }
+        
+        .mylogform {
+            background-color: lightgray;
+            padding: 20px;
+            height: 440px;
+            width: 420px;
+        }
+        
+        video {
+            width: 1200px;
+            border: 2px;
+        }
+        
+        .myreg {
+            background-color: lightgray;
+            padding: 30px;
+            height: 740px;
+            width: 881px;
+        }
+        
+        .mycard1 {
+            width: 250px;
+        }
+        
+        section {
+            border: 2px;
+            padding: 20px;
+        }
+        
+        .myover {
+            text-align: right;
+            color: black;
+        }
+        
+        .mydis {
+            width: 1300px;
+            background-color: lightgray;
+            padding: 30px;
+            margin-left: 110px;
+            margin-top: 50px;
+        }
+        
+        .mydis a {
+            text-decoration: none;
+        }
