@@ -99,91 +99,102 @@
             <div class="col-8">
                 <div class="myreg" style="width:900;">
                     <div class="myhead ">USER REGISTRATION </div>
-                    <form>
+                    <form onsubmit="return validate() ">
 
 
                         <center>
                             <div class="form-group row">
 
-                                <label for="inputFname" class="col-sm-2 col-form-label">First Name</label>
+                                <label for="inputFname" class="col-sm-2 col-form-label">First Name<font color="red">*</font></label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputFname" placeholder="First Name"></div>
+                                    <input type="text" required class="form-control" id="Fname" placeholder="First Name" onchange="return valname()"></div>
                             </div>
 
                             <div class="form-group row ">
-                                <label for="inputLname " class="col-sm-2 col-form-label"> Last Name</label>
-                                <div class="col-sm-10"> <input type="text" class="form-control " id="inputLname " placeholder="Last Name"></div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="inputEmail4 " class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10"> <input type="email " class="form-control " id="inputEmail4 " placeholder="Email "></div>
-                            </div>
-                            <div class="form-group row ">
-                                <label for="inputPassword4 " class="col-sm-2 col-form-label">Password</label>
-                                <div class="col-sm-10"> <input type="password " class="form-control " id="inputPassword4 " placeholder="Password "></div>
+                                <label for="inputLname " class="col-sm-2 col-form-label"> Last Name<font color="red">*</font></label>
+                                <div class="col-sm-10"> <input type="text" required class="form-control " id="Lname " placeholder="Last Name"></div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="inputAddress " class="col-sm-2 col-form-label">Address 1</label>
-                                <div class="col-sm-10"> <input type="text " class="form-control " id="inputAddress " placeholder="1234 Main St "></div>
+                                <label for="inputEmail4 " class="col-sm-2 col-form-label">Email<font color="red">*</font></label>
+                                <div class="col-sm-10">
+                                    <input type="email" required class="form-control " onchange="return valemail()" id="Email1 " placeholder="Email "></div>
                             </div>
                             <div class="form-group row ">
-                                <label for="inputAddress2 " class="col-sm-2 col-form-label">Address 2</label>
-                                <div class="col-sm-10"> <input type="text " class="form-control " id="inputAddress2 " placeholder="Apartment, studio, or floor "></div>
+                                <label for="inputphone " class="col-sm-2 col-form-label ">Phone Number<font color="red ">*</font></label>
+                                <div class="col-sm-10 "> <input type="tel " required class="form-control " onchange="return valPhone()" id="Phone" placeholder="xxx-xxx-xxxx, xxx.xxx.xxxx, xxx xxx xxxx "></div>
+                            </div>
+                            <div class="form-group row ">
+                                <label for="inputPassword4 " class="col-sm-2 col-form-label ">Password<font color="red ">*</font></label>
+                                <div class="col-sm-10 "> <input type="password" onkeyup="validatePassword(this.value);" required class="form-control " id="Password1 " placeholder="Password "> </div><label for="passerr" id="msg"></label>
+                            </div>
+                            <!--
+                            <div class="form-group row ">
+                                <label for="inputPassword5 " class="col-sm-2 col-form-label ">Re Password<font color="red ">*</font></label>
+                                <div class="col-sm-10 "> <input type="password" required class="form-control " id="Password2 " placeholder="RePassword "></div>
+                            </div>-->
+
+                            <div class="form-group row ">
+                                <label for="inputAddress " class="col-sm-2 col-form-label ">Address 1</label>
+                                <div class="col-sm-10 "> <input type="text " class="form-control " id="inputAddress " placeholder="1234 Main St "></div>
+                            </div>
+                            <div class="form-group row ">
+                                <label for="inputAddress2 " class="col-sm-2 col-form-label ">Address 2</label>
+                                <div class="col-sm-10 "> <input type="text " class="form-control " id="inputAddress2 " placeholder="Apartment, studio, or floor "></div>
                             </div>
                             <div class="form-row ">
                                 <div class="form-group row ">
-                                    <label for="inputCity " class="col-sm-2 col-form-label"> City</label>
-                                    <div class="col-sm-10"> <input type="text " class="form-control " id="inputCity "></div>
+                                    <label for="inputCity " class="col-sm-2 col-form-label "> City</label>
+                                    <div class="col-sm-10 "> <input type="text " class="form-control " id="inputCity "></div>
                                 </div>
                                 <div class="form-group row ">
-                                    <label for="inputState " class="col-sm-2 col-form-label">State</label>
-                                    <div class="col-sm-10"> <select id="inputState " class="form-control ">
-                                    <option selected>Choose...</option>
-                                     <option>...</option>
-                            </select></div>
+                                    <label for="inputState " class="col-sm-2 col-form-label ">State</label>
+                                    <div class="col-sm-10 "> <select id="inputState " class="form-control ">
+                                <option selected>Choose...</option>
+                                 <option>...</option>
+                        </select></div>
                                 </div>
                                 <div class="form-group row ">
-                                    <label for="inputZip " class="col-sm-2 col-form-label">Zip</label>
-                                    <div class="col-sm-10"> <input type="text " class="form-control " id="inputZip "></div>
+                                    <label for="inputZip " class="col-sm-2 col-form-label ">Zip</label>
+                                    <div class="col-sm-10 "> <input type="text " class="form-control " id="inputZip "></div>
                                 </div>
                             </div>
-                            <div class="form-group  "><br>
+                            <div class="form-group "><br>
                                 <button type="submit " class="btn btn-primary ">Sign Up</button> <button type="submit " class="btn btn-secondary ">Cancel</button>
                             </div>
                         </center>
 
                     </form>
                 </div>
+
                 <div class="container ">
                     <div class="row ">
 
                     </div>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="card bg-light mb-3" style="max-width: 38rem;">
-                    <div class="card-header">Land of Kerala</div>
-                    <div class="card-body">
-                        <h5 class="card-title"> Relief and drainage</h5>
-                        <p class="card-text">Kerala is a region of great natural beauty. In the eastern part of the state, Anai Peak (8,842 feet [2,695 metres]), the highest peak of peninsular India, crowns the Western Ghats.Among the more important rivers that flow to the
+            <div class="col-4 ">
+                <div class="card bg-light mb-3 " style="max-width: 38rem; ">
+                    <div class="card-header ">Land of Kerala</div>
+                    <div class="card-body ">
+                        <h5 class="card-title "> Relief and drainage</h5>
+                        <p class="card-text ">Kerala is a region of great natural beauty. In the eastern part of the state, Anai Peak (8,842 feet [2,695 metres]), the highest peak of peninsular India, crowns the Western Ghats.Among the more important rivers that flow to the
                             Arabian Sea are the Ponnani (Bharatapuzha), Periyar, Chalakudi, and Pamba.</p>
                     </div>
                 </div>
-                <div class="card text-white bg-secondary mb-3" style="max-width: 38rem;">
-                    <div class="card-header">Economy of Kerala </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Agriculture, forestry, and fishing </h5>
-                        <p class="card-text">Agriculture is the state’s main economic activity. Kerala’s principal cash crops are rubber, coffee, and tea, which are cultivated in plantations on the slopes of the foothills, as well as areca nut, cardamom, cashew nut, coconut,
+                <div class="card text-white bg-secondary mb-3 " style="max-width: 38rem; ">
+                    <div class="card-header ">Economy of Kerala </div>
+                    <div class="card-body ">
+                        <h5 class="card-title ">Agriculture, forestry, and fishing </h5>
+                        <p class="card-text ">Agriculture is the state’s main economic activity. Kerala’s principal cash crops are rubber, coffee, and tea, which are cultivated in plantations on the slopes of the foothills, as well as areca nut, cardamom, cashew nut, coconut,
                             ginger, and pepper. </p>
                     </div>
                 </div>
-                <div class="card bg-light mb-3" style="max-width: 38rem;">
-                    <div class="card-header">People of Kerala</div>
-                    <div class="card-body">
-                        <h5 class="card-title"> Population composition </h5>
-                        <p class="card-text">The Malayalis are a group of people of mixed ethnic heritage who speak Malayalam, a Dravidian language; they constitute the majority of the population of Kerala. Most Malayalis are descendants of the early inhabitants of India.</p>
+                <div class="card bg-light mb-3 " style="max-width: 38rem; ">
+                    <div class="card-header ">People of Kerala</div>
+                    <div class="card-body ">
+                        <h5 class="card-title "> Population composition </h5>
+                        <p class="card-text ">The Malayalis are a group of people of mixed ethnic heritage who speak Malayalam, a Dravidian language; they constitute the majority of the population of Kerala. Most Malayalis are descendants of the early inhabitants of India.</p>
                     </div>
                 </div>
             </div>
@@ -216,7 +227,7 @@
         <!--footer-->
 
         <footer>
-            <div class="myflinks">
+            <div class="myflinks ">
 
                 <div class="row bg-light ">
 
@@ -245,40 +256,154 @@
                             <a class="nav-link " href="https://www.keralatourism.org/destination/wayanad-district/373 " target="_blank ">Wayanad</a>
                             <a class="nav-link " href="https://www.keralatourism.org/destination/kovalam-beach/236 " target="_blank ">Kovalam</a>
                             <a class="nav-link " href=https://www.keralatourism.org/destination/periyar-tiger-reserve-idukki/192 " target="_blank ">Periyar</a>
-                            </nav>
-                        </div>
-                        <div class="col ">
-                            <div class="myfooter ">&nbsp;&nbsp;&nbsp;Specialities</div>
-                            <nav class="nav flex-column ">
-                                <a class="nav-link active " href="https://www.keralatourism.org/ayurveda/ " target="_blank ">Ayurveda</a>
-                                <a class="nav-link " href="https://www.keralatourism.org/monsoon/ " target="_blank ">Monsoon</a>
-                                <a class="nav-link " href="https://www.keralatourism.org/houseboat/ " target="_blank ">Houseboat</a>
-                                <a class="nav-link " href="https://www.keralatourism.org/event/ " target="_blank ">Festival</a>
-                            </nav>
-                        </div>
-                        <div class="col ">
-                            <div class="myfooter ">&nbsp;&nbsp;&nbsp;View Kerala</div>
-                            <nav class="nav flex-column ">
-                                <a class="nav-link active " href="https://www.keralatourism.org/video-gallery/ " target="_blank ">Videos</a>
-                                <a class="nav-link " href="https://www.keralatourism.org/photo-gallery/ " target="_blank ">Photos</a>
-                                <a class="nav-link " href="https://www.keralatourism.org/video-gallery/360-virtual-tour/ " target="_blank ">360° Videos</a>
-                                <a class="nav-link " href="https://www.keralatourism.org/wallpapers/ " target="_blank ">Wallpapers</a>
-                            </nav>
-                        </div>
-                        <div class="col ">
-                            <div class="myfooter ">&nbsp;&nbsp;&nbsp;Plan your Trip</div>
-                            <nav class="nav flex-column ">
-                                <a class="nav-link active " href="https://www.keralatourism.org/travelcare/ " target="_blank ">Travel Care</a>
-                                <a class="nav-link " href="https://www.keralatourism.org/travel-tips/ " target="_blank ">Travel Tips</a>
-                                <a class="nav-link " href="https://www.keralatourism.org/where-to-stay/ " target="_blank ">Hotels & Home Stay</a>
-                                <a class="nav-link " href="https://www.keralatourism.org/kerala-at-a-glance/ " target="_blank ">Kerala at a glance</a>
-                            </nav>
-                        </div>
-                    </div>
+                                    </nav>
+                                </div>
+                                <div class="col ">
+                                    <div class="myfooter ">&nbsp;&nbsp;&nbsp;Specialities</div>
+                                    <nav class="nav flex-column ">
+                                        <a class="nav-link active " href="https://www.keralatourism.org/ayurveda/ " target="_blank ">Ayurveda</a>
+                                        <a class="nav-link " href="https://www.keralatourism.org/monsoon/ " target="_blank ">Monsoon</a>
+                                        <a class="nav-link " href="https://www.keralatourism.org/houseboat/ " target="_blank ">Houseboat</a>
+                                        <a class="nav-link " href="https://www.keralatourism.org/event/ " target="_blank ">Festival</a>
+                                    </nav>
+                                </div>
+                                <div class="col ">
+                                    <div class="myfooter ">&nbsp;&nbsp;&nbsp;View Kerala</div>
+                                    <nav class="nav flex-column ">
+                                        <a class="nav-link active " href="https://www.keralatourism.org/video-gallery/ " target="_blank ">Videos</a>
+                                        <a class="nav-link " href="https://www.keralatourism.org/photo-gallery/ " target="_blank ">Photos</a>
+                                        <a class="nav-link " href="https://www.keralatourism.org/video-gallery/360-virtual-tour/ " target="_blank ">360° Videos</a>
+                                        <a class="nav-link " href="https://www.keralatourism.org/wallpapers/ " target="_blank ">Wallpapers</a>
+                                    </nav>
+                                </div>
+                                <div class="col ">
+                                    <div class="myfooter ">&nbsp;&nbsp;&nbsp;Plan your Trip</div>
+                                    <nav class="nav flex-column ">
+                                        <a class="nav-link active " href="https://www.keralatourism.org/travelcare/ " target="_blank ">Travel Care</a>
+                                        <a class="nav-link " href="https://www.keralatourism.org/travel-tips/ " target="_blank ">Travel Tips</a>
+                                        <a class="nav-link " href="https://www.keralatourism.org/where-to-stay/ " target="_blank ">Hotels & Home Stay</a>
+                                        <a class="nav-link " href="https://www.keralatourism.org/kerala-at-a-glance/ " target="_blank ">Kerala at a glance</a>
+                                    </nav>
+                                </div>
+                            </div>
 
 
-                    </footer>
-
+                            </footer>
+                            <script>
+                                let email1 = document.getElementById("Email1 ");
+                                let pwd1 = document.getElementById("Password1 ");
+                        
+                                let phone1 = document.getElementById("Phone ");
+                                // let pwd2 = document.getElementById("RePassword1 ");
+                                let fname = document.getElementById("Fname ");
+                                let lname = document.getElementById("Lname ");
+                        
+                                function valPhone() {
+                        
+                                    var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+                                    if (phone1.value.match(phoneno)) {
+                                        alert("valid Phone Number ");
+                                        return true;
+                                    } else {
+                                        alert("Not a valid Phone Number ");
+                                        phone1.focus();
+                                        return false;
+                                    }
+                        
+                                }
+                        
+                                function valname() {
+                                    var regName = /^[a-zA-Z]+$/;
+                                    var name = fname.value;
+                                    if (!regName.test(name)) {
+                                        alert('Please enter your  name in characters).');
+                                        fname.focus();
+                                        return false;
+                                    } else {
+                                        alert('Valid name given.');
+                                        return true;
+                                    }
+                                }
+                        
+                                function valemail() {
+                                    //  alert(email1.value);
+                        
+                                    if (!(email1.value == " ")) {
+                                        var reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,3}$/i;
+                                        if (reg.test(email1.value)) {
+                                            return true;
+                                        }
+                                        alert('Please enter valid email.');
+                                        email1.focus();
+                                        return false;
+                                    }
+                        
+                                }
+                        
+                                function validatePassword(password) {
+                                    //alert(password);
+                                    // Do not show anything when the length of password is zero.
+                                    if (password.length === 0) {
+                                        document.getElementById("msg ").innerHTML = " ";
+                                        return;
+                                    }
+                                    // Create an array and push all possible values that you want in password
+                                    var matchedCase = new Array();
+                                    matchedCase.push("[$@$!%*#?&] "); // Special Charector
+                                    matchedCase.push("[A-Z] "); // Uppercase Alpabates
+                                    matchedCase.push("[0-9] "); // Numbers
+                                    matchedCase.push("[a-z] "); // Lowercase Alphabates
+                        
+                                    // Check the conditions
+                                    var passed = 0;
+                                    for (var i = 0; i < matchedCase.length; i++) {
+                                        if (new RegExp(matchedCase[i]).test(password)) {
+                                            passed++;
+                                        }
+                                    }
+                                    // Display it
+                                    var color = " ";
+                                    var strength = " ";
+                                    switch (passed) {
+                                        case 0:
+                                        case 1:
+                                        case 2:
+                                            strength = "Very Weak ";
+                                            color = "red ";
+                                            break;
+                                        case 3:
+                                            strength = "Medium ";
+                                            color = "orange ";
+                                            break;
+                                        case 4:
+                                            strength = "Strong ";
+                                            color = "green ";
+                                            break;
+                                    }
+                                    document.getElementById("msg ").innerHTML = strength;
+                                    document.getElementById("msg ").style.color = color;
+                                    document.getElementById("msg ").style.backgroundColor = "cyan ";
+                        
+                                }
+                        
+                                function validate() {
+                                    alert(fname.value);
+                                    alert(lname.value);
+                                    alert(email1.value);
+                                    alert(pwd2.value);
+                                    alert(pwd1.value);
+                                    alert(phone1.value);
+                                    /*if ((email1.value == " ") || (pwd1.value == " ") || (fname.value == " ") || (lname.value == " ") || (pwd2.value == " ") || (phone1.value == " ")) {
+                                        alert('Mandatory fields cannot be left blank');
+                                        //  window.location.href = "login.html?flag=F ";
+                        
+                                    } else {
+                        
+                                        alert('Successful');
+                                    }*/
+                                    return false;
+                                }
+                            </script>
 </body>
 
 </html>
